@@ -13,6 +13,49 @@ class DashboardtState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 24.0),
+          child: IconButton(
+            icon: Icon(
+              Icons.menu,
+              color: Colors.blueAccent,
+              size: 36,
+            ),
+            onPressed: () {},
+          ),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 24.0),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MyWelcomeView()));
+              },
+              child: Container(
+                width: 45,
+                height: 45,
+                decoration: BoxDecoration(
+                  // color: Colors.white,
+                  borderRadius: BorderRadius.circular(50),
+                  border: Border.all(
+                    width: 3,
+                    color: Theme.of(context).primaryColor,
+                  ),
+
+                  image: DecorationImage(
+                    image: AssetImage("assets/images/logo2.png"),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
       body: ListView(
         children: [
           Container(
