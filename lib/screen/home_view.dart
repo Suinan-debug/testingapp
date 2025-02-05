@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:testingapp/screen/welcome_view.dart';
 
 class HomeView extends StatefulWidget {
@@ -16,9 +17,12 @@ class _HomeViewState extends State<HomeView> {
         body: Container(
       margin: EdgeInsets.all(24),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           _header(context),
           _inputField(context),
+          _forgetPassword(context),
+          _signUp(context),
         ],
       ),
     ));
@@ -34,31 +38,10 @@ class _HomeViewState extends State<HomeView> {
     );
   }
 
-//   _inputField(context) {
-//     return Column(
-//       children: [
-//         TextField(
-//           decoration: InputDecoration(
-//               hintText: "Username",
-//               border: OutlineInputBorder(
-//                   borderRadius: BorderRadius.circular(10),
-//                   borderSide: BorderSide.none),
-//               fillColor: Theme.of(context).primaryColor.withOpacity(0.1),
-//               filled: true),
-//            prefixIcon: FaIcon(
-//             FontAwesomeIcons.user,
-//             size: 20.0,
-//             color: Colors.black,
-//           ),
-//         ),
-//       ],
-//     );
-//   }
-// }
-
   _inputField(BuildContext context) {
     // Add BuildContext
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         TextField(
           decoration: InputDecoration(
@@ -106,14 +89,33 @@ class _HomeViewState extends State<HomeView> {
         SizedBox(
           height: 10,
         ),
-        ElevatedButton(
-          onPressed: () {},
-          child: Text(
-            "Register sample a",
-            style: TextStyle(fontSize: 20),
+        Container(
+          child: ElevatedButton(
+            onPressed: () {},
+            child: Text(
+              "Register",
+              style: TextStyle(fontSize: 20),
+            ),
+            style: ElevatedButton.styleFrom(
+                shape: StadiumBorder(),
+                padding: EdgeInsets.symmetric(vertical: 16)),
           ),
         )
       ],
     );
   }
+}
+
+_forgetPassword(context) {
+  return TextButton(onPressed: () {}, child: Text("Forget password?"));
+}
+
+_signUp(context) {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      Text("Don't have an Account? "),
+      TextButton(onPressed: () {}, child: Text("Sign Up"))
+    ],
+  );
 }
