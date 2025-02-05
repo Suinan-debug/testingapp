@@ -10,9 +10,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: GoogleFonts.poppins().fontFamily),
-      home: HomeView(),
-      // home: MyWelcomeView(),
+      theme: ThemeData(
+        fontFamily: GoogleFonts.poppins().fontFamily,
+        primaryColor: const Color.fromARGB(255, 255, 240, 34),
+        secondaryHeaderColor: Color.fromRGBO(0, 19, 173, 1),
+        scaffoldBackgroundColor: Color.fromRGBO(0, 19, 173, 1),
+      ),
+
+      // home: HomeView(),
+      home: MyWelcomeView(),
     );
-    }
+  }
 }
