@@ -109,7 +109,7 @@ class _HomeViewState extends State<HomeView> {
         ElevatedButton(
           onPressed: () {},
           child: Text(
-            "Register 1",
+            "Register",
             style: TextStyle(fontSize: 20),
           ),
         )
