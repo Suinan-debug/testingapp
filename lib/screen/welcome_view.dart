@@ -4,6 +4,22 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:testingapp/screen/home_view.dart';
 
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Your App Title',
+      theme: ThemeData(
+        primaryColor: const Color.fromARGB(255, 255, 240, 34),
+        textTheme: GoogleFonts.poppinsTextTheme(),
+      ),
+      home: const MyWelcomeView(),
+    );
+  }
+}
+
 class MyWelcomeView extends StatefulWidget {
   const MyWelcomeView({super.key});
 
@@ -29,7 +45,7 @@ class _MWelcomeView extends State<MyWelcomeView> {
             image: AssetImage("images/image1.jpg"),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
-              const Color.fromARGB(255, 0, 24, 37)
+              const Color.fromARGB(255, 0, 12, 80)
                   .withOpacity(0.5), // Opacity value (0.0 to 1.0)
               BlendMode.srcATop, // Blend mode (see explanation below)
             ),
@@ -57,7 +73,7 @@ class _MWelcomeView extends State<MyWelcomeView> {
                     "Data",
                     style: GoogleFonts.bebasNeue(
                       fontSize: 32,
-                      color: const Color.fromARGB(255, 10, 243, 169),
+                      color: Theme.of(context).primaryColor,
                       letterSpacing: 2,
                     ),
                   )),
@@ -123,8 +139,7 @@ class _MWelcomeView extends State<MyWelcomeView> {
                                     Text("Projects for",
                                         style: GoogleFonts.poppins(
                                           fontSize: 25,
-                                          color: const Color.fromARGB(
-                                              255, 10, 243, 169),
+                                          color: Theme.of(context).primaryColor,
                                           fontWeight: FontWeight.bold,
                                         )),
                                     SizedBox(
@@ -171,7 +186,7 @@ class _MWelcomeView extends State<MyWelcomeView> {
                             width: 240,
                             height: 39,
                             decoration: BoxDecoration(
-                                color: const Color.fromARGB(255, 10, 243, 169),
+                                color: Theme.of(context).primaryColor,
                                 borderRadius: BorderRadius.circular(5)),
                             padding: const EdgeInsets.all(8.0),
                             child: Row(
@@ -181,7 +196,7 @@ class _MWelcomeView extends State<MyWelcomeView> {
                                 FaIcon(
                                   FontAwesomeIcons.add,
                                   size: 20.0,
-                                  color: Colors.black,
+                                  color: Theme.of(context).primaryColor,
                                 ),
                                 const SizedBox(width: 8.0),
                                 Text(
