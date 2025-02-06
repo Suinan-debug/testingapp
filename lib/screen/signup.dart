@@ -170,8 +170,10 @@ class _HomeViewState extends State<HomeView> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Dashboard()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SchoolDashboard()));
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Theme.of(context)
@@ -186,8 +188,7 @@ class _HomeViewState extends State<HomeView> {
                   "Register",
                   style: TextStyle(
                       fontSize: 20,
-                      color: Theme.of(context)
-                          .secondaryHeaderColor), // White text for contrast
+                      color: Colors.black54), // White text for contrast
                 ),
               ),
             ),
@@ -219,7 +220,7 @@ class _HomeViewState extends State<HomeView> {
             child: Text(
               "Login",
               style: TextStyle(
-                color: Theme.of(context).secondaryHeaderColor,
+                color: Colors.blueAccent,
               ),
             ))
       ],

@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:testingapp/screen/home_view.dart';
+import 'package:testingapp/screen/signup.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Your App Title',
+      title: 'PATTS COLLEGE',
       theme: ThemeData(
         primaryColor: const Color.fromARGB(255, 255, 240, 34),
         textTheme: GoogleFonts.poppinsTextTheme(),
@@ -29,9 +29,15 @@ class MyWelcomeView extends StatefulWidget {
 
 class _MWelcomeView extends State<MyWelcomeView> {
   final List levels = [
-    "Beginner Level",
-    "Intermediate  Level",
+    "In order to attain this vision, PATTS College has strengthened its faculty thru its competency-based training, including research and development programs, streamlined its curricula to be responsive and relevant to the needs of the industry and has painstakingly invested in a new campus that would offer the best in facilities. ",
+    "In order to achieve its mission, PATTS College employs experienced instructors and practitioners from the industry to intensify its academe-industry linkages, and broaden its On-the-Job Training and Placement Program. ",
     "Professional  Level"
+  ];
+
+  final List levels2 = ["OUT VISION", "OUR MISSION"];
+  final List levels3 = [
+    "To become the Center of Excellence in Aviation Education",
+    "To provide quality Aviation Education and to assist our graduates in the labor market"
   ];
 
   @override
@@ -42,7 +48,7 @@ class _MWelcomeView extends State<MyWelcomeView> {
         width: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("images/image1.jpg"),
+            image: AssetImage("images/image3.png"),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
               const Color.fromARGB(255, 0, 12, 80)
@@ -58,35 +64,87 @@ class _MWelcomeView extends State<MyWelcomeView> {
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Padding(
                 padding: const EdgeInsets.only(top: 50.0),
-                child: Text(
-                  "Project ",
-                  style: GoogleFonts.bebasNeue(
-                    fontSize: 32,
-                    color: Colors.white,
-                    letterSpacing: 2,
+                child:
+                    // Text(
+                    //   "Project ",
+                    //   style: GoogleFonts.bebasNeue(
+                    //     fontSize: 32,
+                    //     color: Colors.white,
+                    //     letterSpacing: 2,
+                    //   ),
+                    // ),
+                    Container(
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("images/logo1.png"),
+                      fit: BoxFit.contain,
+                    ),
                   ),
+                  height: 200,
+                  width: 400,
                 ),
               ),
-              Padding(
-                  padding: const EdgeInsets.only(top: 50.0),
-                  child: Text(
-                    "Data",
-                    style: GoogleFonts.bebasNeue(
-                      fontSize: 32,
-                      color: Theme.of(context).primaryColor,
-                      letterSpacing: 2,
-                    ),
-                  )),
+              // Padding(
+              //     padding: const EdgeInsets.only(top: 50.0),
+              //     child: Text(
+              //       "Data",
+              //       style: GoogleFonts.bebasNeue(
+              //         fontSize: 32,
+              //         color: Theme.of(context).primaryColor,
+              //         letterSpacing: 2,
+              //       ),
+              //     )),
             ]),
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // Container(
+                  //   decoration: const BoxDecoration(
+                  //     image: DecorationImage(
+                  //       image: AssetImage("images/logo1.png"),
+                  //       fit: BoxFit.contain,
+                  //     ),
+                  //   ),
+                  //   height: 200,
+                  //   width: 400,
+                  // ),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Text(
-                    "About Us",
+                    "WHERE",
                     style: GoogleFonts.poppins(
-                      fontSize: 40,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        "DREAMS ",
+                        style: GoogleFonts.poppins(
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                          color: Theme.of(context).primaryColor,
+                        ),
+                      ),
+                      Text(
+                        "TAKE",
+                        style: GoogleFonts.poppins(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Text(
+                    "FLIGHT",
+                    style: GoogleFonts.poppins(
+                      fontSize: 80,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
@@ -103,63 +161,77 @@ class _MWelcomeView extends State<MyWelcomeView> {
                   Padding(
                     padding: const EdgeInsets.only(top: 40.0),
                     child: Container(
-                      height: 226,
+                      height: 300,
                       width: MediaQuery.of(context).size.width,
                       color: const Color.fromARGB(0, 255, 136, 0),
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: levels.length,
-                        itemBuilder: (BuildContext context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.only(right: 10),
-                            child: Container(
-                              height: 226,
-                              width: 295,
-                              decoration: BoxDecoration(
-                                // color: const Color.fromARGB(255, 46, 192, 255),
-                                borderRadius: BorderRadius.circular(20.0),
-                                image: DecorationImage(
-                                  image: AssetImage("images/image1.jpg"),
-                                  fit: BoxFit.cover,
-                                  colorFilter: ColorFilter.mode(
-                                    const Color.fromARGB(255, 27, 92, 128)
-                                        .withOpacity(
-                                            0.8), // Opacity value (0.0 to 1.0)
-                                    BlendMode
-                                        .srcATop, // Blend mode (see explanation below)
+                      child: Container(
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 2,
+                          itemBuilder: (BuildContext context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(right: 10),
+                              child: Container(
+                                height: 226,
+                                width: 295,
+                                decoration: BoxDecoration(
+                                  // color: const Color.fromARGB(255, 46, 192, 255),
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  image: DecorationImage(
+                                    image:
+                                        AssetImage("assets/images/image3.png"),
+                                    fit: BoxFit.cover,
+                                    colorFilter: ColorFilter.mode(
+                                      const Color.fromARGB(255, 255, 255, 255)
+                                          .withOpacity(
+                                              1), // Opacity value (0.0 to 1.0)
+                                      BlendMode
+                                          .srcATop, // Blend mode (see explanation below)
+                                    ),
+                                  ),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 20.0, top: 20.0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(levels2[index],
+                                          style: GoogleFonts.poppins(
+                                            fontSize: 30,
+                                            color: const Color.fromARGB(
+                                                255, 4, 13, 139),
+                                            fontWeight: FontWeight.bold,
+                                          )),
+                                      SizedBox(
+                                        height: 10.0,
+                                      ),
+                                      Text(levels3[index],
+                                          style: GoogleFonts.poppins(
+                                            fontSize: 15,
+                                            color: const Color.fromARGB(
+                                                255, 4, 13, 139),
+                                            fontWeight: FontWeight.bold,
+                                          )),
+                                      SizedBox(
+                                        height: 10.0,
+                                      ),
+                                      Text(levels[index],
+                                          style: GoogleFonts.poppins(
+                                            fontSize: 12,
+                                            color: Colors.black,
+                                          )),
+                                      SizedBox(
+                                        height: 20.0,
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 20.0, top: 20.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("Projects for",
-                                        style: GoogleFonts.poppins(
-                                          fontSize: 25,
-                                          color: Theme.of(context).primaryColor,
-                                          fontWeight: FontWeight.bold,
-                                        )),
-                                    SizedBox(
-                                      height: 10.0,
-                                    ),
-                                    Text(levels[index],
-                                        style: GoogleFonts.poppins(
-                                          fontSize: 13,
-                                          color: const Color.fromARGB(
-                                              255, 255, 255, 255),
-                                        )),
-                                    SizedBox(
-                                      height: 20.0,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          );
-                        },
+                            );
+                          },
+                        ),
                       ),
                     ),
                   ),
@@ -170,7 +242,7 @@ class _MWelcomeView extends State<MyWelcomeView> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text("Get's Started",
+                        Text("",
                             style: GoogleFonts.lato(
                               fontSize: 16,
                               color: const Color.fromARGB(193, 255, 255, 255),

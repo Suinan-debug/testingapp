@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:testingapp/screen/my_courses.dart';
 import 'package:testingapp/screen/signup.dart';
 import 'package:testingapp/screen/welcome_view.dart';
 
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SchoolDashboard(),
+      home: const MyCourses(),
     );
   }
 }
@@ -29,14 +28,14 @@ final List<String> imagePaths = [
   "assets/images/image2.png",
 ];
 
-class SchoolDashboard extends StatefulWidget {
-  const SchoolDashboard({super.key});
+class MyCourses extends StatefulWidget {
+  const MyCourses({super.key});
 
   @override
-  State<SchoolDashboard> createState() => _SchoolDashboardState();
+  State<MyCourses> createState() => _MyCourses();
 }
 
-class _SchoolDashboardState extends State<SchoolDashboard> {
+class _MyCourses extends State<MyCourses> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -94,7 +93,7 @@ class _SchoolDashboardState extends State<SchoolDashboard> {
               title: const Text('Home'),
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SchoolDashboard()));
+                    MaterialPageRoute(builder: (context) => MyCourses()));
               },
               leading: const Icon(Icons.home),
             ),
@@ -122,70 +121,16 @@ class _SchoolDashboardState extends State<SchoolDashboard> {
         child: Column(
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Align(
-              alignment: Alignment.center,
-              child: Text(
-                'WELCOME TO PATTS COLLEGE OF AERONAUTICS!',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 0, 15, 148),
+            Container(
+              height: 226,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20.0),
+                image: DecorationImage(
+                  image: AssetImage("assets/images/m_v.png"),
+                  fit: BoxFit.cover,
                 ),
               ),
-            ),
-            CarouselSlider(items: [
-              Container(
-                margin: EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                        'assets/images/image2.png'), // Use AssetImage
-                    fit: BoxFit.cover,
-                  ),
-                  color: Colors.black, // This will be a color overlay
-                ),
-              )
-            ], options: CarouselOptions()),
-            const SizedBox(height: 24),
-            GridView.count(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              crossAxisCount: 4,
-              crossAxisSpacing: 16,
-              mainAxisSpacing: 16,
-              children: [
-                ClickableDashboardCard(
-                  icon: Icons.people,
-                  title: 'Students',
-                  value: '250',
-                  color: Colors.blue,
-                  onTap: () {},
-                ),
-                ClickableDashboardCard(
-                  icon: Icons.school,
-                  title: 'Teachers',
-                  value: '30',
-                  color: Colors.green,
-                  onTap: () {},
-                ),
-                ClickableDashboardCard(
-                  icon: Icons.book,
-                  title: 'Courses',
-                  value: '10',
-                  color: Colors.orange,
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => MyCourses()));
-                  },
-                ),
-                ClickableDashboardCard(
-                  icon: Icons.event,
-                  title: 'Events',
-                  value: '5',
-                  color: Colors.purple,
-                  onTap: () {},
-                ),
-              ],
             ),
             const SizedBox(height: 24),
             const Text(
