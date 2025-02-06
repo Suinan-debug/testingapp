@@ -150,7 +150,7 @@ class _SchoolDashboardState extends State<SchoolDashboard> {
             GridView.count(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              crossAxisCount: 4,
+              crossAxisCount: 2,
               crossAxisSpacing: 16,
               mainAxisSpacing: 16,
               children: [
@@ -170,7 +170,7 @@ class _SchoolDashboardState extends State<SchoolDashboard> {
                 ),
                 ClickableDashboardCard(
                   icon: Icons.book,
-                  title: 'Courses',
+                  title: 'About Us',
                   value: '10',
                   color: Colors.orange,
                   onTap: () {

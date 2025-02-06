@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:testingapp/screen/dashboard.dart';
+import 'package:testingapp/screen/my_courses.dart';
 import 'package:testingapp/screen/signup.dart';
 import 'package:testingapp/screen/welcome_view.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Color.fromRGBO(0, 19, 173, 1),
       ),
 
-      home: MyWelcomeView(),
+      home: MyCourses(),
       // home: MyWelcomeView(),
       // home: SchoolDashboard(),
     );

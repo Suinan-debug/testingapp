@@ -69,13 +69,17 @@ flutter:
       - assets/images/image3.png
       - assets/images/m_v.png
       - assets/images/logo1.png
+      - assets/images/jan.png
+      - assets/images/feb.png
+      - assets/images/PATTS2.png
 
       - images/image2.png
       - images/image3.png
       - images/pattslogo.png
       - images/logo2.png
       - images/m_v.png
-
+      - images/jan.png
+      - images/PATTS2.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
